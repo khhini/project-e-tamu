@@ -1,7 +1,7 @@
 <script>
   import { user } from "../_store";
   export let showModal = false;
-  export let modalsize = "modal-lg";
+  export let modalsize = "";
   export let title = "Modal";
   
   function setShowModal() {

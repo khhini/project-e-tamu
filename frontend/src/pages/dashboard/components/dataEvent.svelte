@@ -1,6 +1,6 @@
 <script>
   import Modal from "./Modal.svelte";
-  import {url,goto} from '@sveltech/routify';
+  import { url, goto } from "@sveltech/routify";
   import { createEventDispatcher } from "svelte";
   const dispatch = createEventDispatcher();
   export let data;
@@ -45,7 +45,7 @@
       .then(x => x.json())
       .then(json => {
         if (json == "OK") {
-          $goto("/",{},false);
+          $goto("/", {}, false);
         }
       });
   }
@@ -59,17 +59,21 @@
 
 <Modal showModal={ModalDelete} {data} title={'Hapus Event'}>
   Hapus Data Event {data.nama_event} ?
-  <div class="form-inline float-right">
-    <button
-      type="button"
-      class="btn btn-secondary mx-2"
-      data-dismiss="modal"
-      on:click={showModalDelete}>
-      Batal
-    </button>
-    <button type="button" class="btn btn-danger" on:click={deleteApi}>
-      Hapus
-    </button>
+  <div class="row">
+    <div class="col">
+      <div class="form-inline float-right">
+        <button
+          type="button"
+          class="btn btn-secondary mx-2"
+          data-dismiss="modal"
+          on:click={showModalDelete}>
+          Batal
+        </button>
+        <button type="button" class="btn btn-danger" on:click={deleteApi}>
+          Hapus
+        </button>
+      </div>
+    </div>
   </div>
 </Modal>
 
@@ -82,7 +86,10 @@
   <td>{data.jam_selesai}</td>
   <td>{data.format_form}</td>
   <td width="130px">
-    <a href="{$url("../:eventId",{eventId:data._id.$oid})}" class="btn btn-primary btn-sm action-btn text-white" title="Detail">
+    <a
+      href={$url('../:eventId', { eventId: data._id.$oid })}
+      class="btn btn-primary btn-sm action-btn text-white"
+      title="Detail">
       <i class="fas fa-info" />
     </a>
     <button

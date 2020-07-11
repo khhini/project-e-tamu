@@ -62,9 +62,9 @@ def update_tamu(id_tamu):
 
     return not_found()
 
-@tamu.route('/tamu/<id_tamu>', methods=['DELETE'])
-def del_tamu(id_tamu):
-    mongo.db.tamu.delete_one({'_id':ObjectId(id_tamu)})
+@tamu.route('/tamu/<id_event>', methods=['DELETE'])
+def del_tamu(id_event):
+    mongo.db.tamu.delete_many({'id_event':ObjectId(id_event)})
     resp = jsonify('OK')
     resp.status_code = 200
     return resp

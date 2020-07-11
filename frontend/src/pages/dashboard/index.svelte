@@ -76,8 +76,8 @@
           data.set(json);          
         });
     },
-    deleteApi: _id => {
-      fetch(page.apiurl + "/" + _id, {
+    deleteApi: (url,_id) => {
+      fetch(url + "/" + _id, {
         method: "DELETE",
         headers: {
           "Content-type": "application/json; charset=UTF-8",
@@ -115,6 +115,10 @@
      })
     }
   };
+  function deleteEvent(_id){
+    page.deleteApi("http://localhost:5000/tamu",_id);
+    page.deleteApi(page.apiurl,_id);
+  }
   onMount(async () => {
     if ($user["level"] == "admin") {
       page.apiurl = "http://localhost:5000/user";
@@ -186,7 +190,7 @@
               data={d}
               {i}
               on:deleteApi={() => {
-                page.deleteApi(d._id.$oid);
+                page.deleteApi(page.apiurl,d._id.$oid);
               }} />
           {/each}
         {:else if page.data && $user['level'] == 'user'}
@@ -195,7 +199,8 @@
               data={d}
               {i}
               on:deleteApi={() => {
-                page.deleteApi(d._id.$oid);
+                deleteEvent(d._id.$oid);
+                
               }} />
           {/each}
         {/if}
