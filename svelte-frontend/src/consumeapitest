@@ -1,0 +1,35 @@
+ onMount(async()=>{
+    // POST
+    //  data = await fetch("http://localhost:5000/user", {
+    //    method: 'POST',
+    //    body: JSON.stringify({
+    //      email: "kaka18ti@mahasiswa.pcr.ac.id",
+    //      level: "user",
+    //      nama: "kaka harapan hutapea",
+    //      no_hp: "082170299092",
+    //      password: "test"
+    //    }),
+    //    headers: {
+    //      "Content-type": "application/json; charset=UTF-8"
+    //      }
+    //  }).then(x=>x.json()).then(json => console.log(json))
+    // GET
+    // data = await fetch('http://localhost:5000/user').then(x=>x.json()).then(json => console.log(json))
+    //PUT
+    //  data = await fetch("http://localhost:5000/user/5eff48277b35510a9dbee71f", {
+    //    method: 'PUT',
+    //    body: JSON.stringify({
+    //      email: "keke18ti@mahasiswa.pcr.ac.id",
+    //      level: "user",
+    //      nama: "keke harapan hutapea",
+    //      no_hp: "082170299093",
+    //      password: "keke18"
+    //    }),
+    //    headers: {
+    //      "Content-type": "application/json; charset=UTF-8"
+    //      }
+    //  }).then(x=>x.json()).then(json => console.log(json))
+    // DELETE
+    //  data = await fetch("http://localhost:5000/user/5eff48277b35510a9dbee71f", {
+    //    method: 'DELETE'})
+  });
