@@ -73,7 +73,7 @@
         .then(x => x.json())
         .then(json => {
           page.data = json;
-          data.set(json);
+          data.set(json);          
         });
     },
     deleteApi: _id => {
@@ -190,7 +190,7 @@
               }} />
           {/each}
         {:else if page.data && $user['level'] == 'user'}
-          {#each page.data as d, i}
+          {#each page.data.reverse() as d, i}
             <DataEvent
               data={d}
               {i}

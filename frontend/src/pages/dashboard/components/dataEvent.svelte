@@ -82,7 +82,7 @@
   <td>{data.jam_selesai}</td>
   <td>{data.format_form}</td>
   <td width="130px">
-    <a href="{$url("../:eventId",{eventId:data._id.$oid})}" class="btn btn-primary btn-sm action-btn" title="Detail">
+    <a href="{$url("../:eventId",{eventId:data._id.$oid})}" class="btn btn-primary btn-sm action-btn text-white" title="Detail">
       <i class="fas fa-info" />
     </a>
     <button
