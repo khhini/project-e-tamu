@@ -1,3 +1,0 @@
-
-// untuk filter data
-var filter = () => console.log(data.filter((d)=> d.nama.includes('k')));
